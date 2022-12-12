@@ -1,0 +1,1040 @@
+basePath: /
+definitions:
+  model.Admin:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      pass:
+        type: string
+    type: object
+  model.Assignment:
+    properties:
+      exercise:
+        $ref: '#/definitions/model.Exercise'
+      exerciseId:
+        type: integer
+      id:
+        type: integer
+      link:
+        type: string
+      name:
+        type: string
+      student:
+        $ref: '#/definitions/model.Student'
+      studentId:
+        type: integer
+    type: object
+  model.Chapter:
+    properties:
+      course:
+        $ref: '#/definitions/model.Course'
+      courseId:
+        type: integer
+      id:
+        type: integer
+      link:
+        type: string
+      name:
+        type: string
+    type: object
+  model.Course:
+    properties:
+      codeCourse:
+        type: string
+      id:
+        type: integer
+      lessons:
+        type: integer
+      name:
+        type: string
+      subject:
+        $ref: '#/definitions/model.Subject'
+      subjectId:
+        type: integer
+      teacher:
+        $ref: '#/definitions/model.Teacher'
+      teacherId:
+        type: integer
+    type: object
+  model.CourseOfStudent:
+    properties:
+      course:
+        $ref: '#/definitions/model.Course'
+      courseId:
+        type: integer
+      id:
+        type: integer
+      student:
+        $ref: '#/definitions/model.Student'
+      studentId:
+        type: integer
+    type: object
+  model.Exercise:
+    properties:
+      course:
+        $ref: '#/definitions/model.Course'
+      courseId:
+        type: integer
+      id:
+        type: integer
+      link:
+        type: string
+      name:
+        type: string
+    type: object
+  model.File:
+    properties:
+      course:
+        $ref: '#/definitions/model.Course'
+      courseId:
+        type: integer
+      id:
+        type: integer
+      link:
+        type: string
+      name:
+        type: string
+    type: object
+  model.Student:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      pass:
+        type: string
+    type: object
+  model.Subject:
+    properties:
+      codeSubject:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+  model.Teacher:
+    properties:
+      email:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      pass:
+        type: string
+    type: object
+host: localhost:3000
+info:
+  contact: {}
+  description: Api canvas project
+  title: Canvas Project
+  version: "2.0"
+paths:
+  /admin/course/create:
+    post:
+      consumes:
+      - application/json
+      description: Admin create course
+      parameters:
+      - description: Course
+        format: model.Course
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Course'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with course
+  /admin/course/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Admin delete course
+      parameters:
+      - description: Course need delete
+        format: model.Course
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Course'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with course
+  /admin/course/list:
+    get:
+      consumes:
+      - application/json
+      description: Admin get list course
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with course
+  /admin/course/list/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Admin get course by id
+      parameters:
+      - description: Course Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with course
+  /admin/course/update:
+    put:
+      consumes:
+      - application/json
+      description: Admin update course
+      parameters:
+      - description: Course need update
+        format: model.Course
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Course'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with course
+  /admin/student/accounts:
+    get:
+      consumes:
+      - application/json
+      description: Admin get all account student
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account student
+  /admin/student/accounts/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Admin get account student by id
+      parameters:
+      - description: Student id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account student
+  /admin/student/create:
+    post:
+      consumes:
+      - application/json
+      description: Admin create account student
+      parameters:
+      - description: Account student
+        format: model.Student
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Student'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account student
+  /admin/student/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Admin delete account student
+      parameters:
+      - description: Account stundent need delete
+        format: model.Student
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Student'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account student
+  /admin/student/update:
+    put:
+      consumes:
+      - application/json
+      description: Admin update account student
+      parameters:
+      - description: Account student need update
+        format: model.Student
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Student'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account student
+  /admin/subject/create:
+    post:
+      consumes:
+      - application/json
+      description: Admin create subject
+      parameters:
+      - description: Subject
+        format: model.Subject
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Subject'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with subject
+  /admin/subject/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Admin delete subject
+      parameters:
+      - description: Subject need delete
+        format: mode.Subject
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Subject'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with subject
+  /admin/subject/list:
+    get:
+      consumes:
+      - application/json
+      description: Admin get all subject
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with subject
+  /admin/subject/list/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Admin get subject by id
+      parameters:
+      - description: Subject id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with subject
+  /admin/subject/update:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Subject need update
+        format: model.Subject
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Subject'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with subject
+  /admin/teacher/accounts:
+    get:
+      consumes:
+      - application/json
+      description: Admin get all account teacher
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account teacher
+  /admin/teacher/accounts/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Admin get account teacher by id
+      parameters:
+      - description: Teacher Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account teacher
+  /admin/teacher/create:
+    post:
+      consumes:
+      - application/json
+      description: Admin create account teacher
+      parameters:
+      - description: Account teacher
+        format: model.Teacher
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Teacher'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account teacher
+  /admin/teacher/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Admin delete account teacher
+      parameters:
+      - description: Account teacher need delete
+        format: model.Teacher
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Teacher'
+      responses: {}
+      tags:
+      - Admin with account teacher
+  /admin/teacher/update:
+    put:
+      consumes:
+      - application/json
+      parameters:
+      - description: Account teacher need update
+        format: model.Teacher
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Teacher'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Admin with account teacher
+  /login/admin:
+    post:
+      consumes:
+      - application/json
+      description: Admin login
+      parameters:
+      - description: Account admin
+        format: model.Admin
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Admin'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Login
+  /login/student:
+    post:
+      consumes:
+      - application/json
+      description: Login student
+      parameters:
+      - description: Account student
+        format: model.Student
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Student'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Login
+  /login/teacher:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: Account Teaccher
+        format: model.Teacher
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Teacher'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Login
+  /student/joincourse:
+    post:
+      consumes:
+      - application/json
+      description: Student join course
+      parameters:
+      - description: Course of student
+        format: model.CourseOfStudent
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.CourseOfStudent'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with course
+  /student/my_course:
+    get:
+      consumes:
+      - application/json
+      description: Student get all course
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with course
+  /student/my_course/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Student get course of student by id
+      parameters:
+      - description: Course of student id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with course
+  /student/my_course/{id}/exercise:
+    get:
+      consumes:
+      - application/json
+      description: Student get exercise of course
+      parameters:
+      - description: Course Of Student id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with exercise
+  /student/my_course/{id}/exercise/{exercise_id}:
+    get:
+      consumes:
+      - application/json
+      description: Student get exercise of course by id
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Exercise Id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with exercise
+  /student/my_course/{id}/exercise/{exercise_id}/assignment:
+    get:
+      consumes:
+      - application/json
+      description: Student get assignment of exercise
+      parameters:
+      - description: Exercise id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with assignment
+  /student/my_course/{id}/exercise/{exercise_id}/assignment_create:
+    post:
+      consumes:
+      - application/json
+      description: Student create assignment
+      parameters:
+      - description: Exercise id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with assignment
+  /student/my_course/{id}/exercise/{exercise_id}/assignment_update:
+    put:
+      consumes:
+      - application/json
+      description: Student update assignment
+      parameters:
+      - description: Exercise Id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      - description: Assignment need update
+        format: model.Assignment
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Assignment'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Student with assignment
+  /teacher/courses:
+    get:
+      consumes:
+      - application/json
+      description: Course of teacher
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with course
+  /teacher/courses/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Course of teacher by id
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with course
+  /teacher/courses/{id}/attendance/{attendance_id}:
+    put:
+      consumes:
+      - application/json
+      description: Teacher update attendance status student
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Attendance status id
+        in: path
+        name: attendance_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with attendance status
+  /teacher/courses/{id}/chapter:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get all chapter of course
+      parameters:
+      - description: Course Id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with chapter
+  /teacher/courses/{id}/chapter/{chapter_id}:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get chapter id
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Chapter id
+        in: path
+        name: chapter_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with chapter
+  /teacher/courses/{id}/chapter/create:
+    post:
+      consumes:
+      - application/json
+      description: Teacher create chapter for course
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Chapter
+        format: model.Chapter
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Chapter'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with chapter
+  /teacher/courses/{id}/chapter/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Teacher delete chapter
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with chapter
+  /teacher/courses/{id}/chapter/update:
+    put:
+      consumes:
+      - application/json
+      description: Teacher update chapter
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Chapter id
+        in: path
+        name: chapter_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with chapter
+  /teacher/courses/{id}/exercise:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get exercises of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with exercise
+  /teacher/courses/{id}/exercise/{exercise_id}:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get exercise by id
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: execie id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with exercise
+  /teacher/courses/{id}/exercise/{exercise_id}/assignment:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get assignment of exercise
+      parameters:
+      - description: exercise id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with assignment
+  /teacher/courses/{id}/exercise/{exercise_id}/assignment/{assignment_id}:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get assignment
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Exercise id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      - description: Assignment id
+        in: path
+        name: assignment_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with assignment
+  /teacher/courses/{id}/exercise/{exercise_id}/assignment/update:
+    put:
+      consumes:
+      - application/json
+      description: Teacher update assignment
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Exercise id
+        in: path
+        name: exercise_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with assignment
+  /teacher/courses/{id}/exercise/create:
+    post:
+      consumes:
+      - application/json
+      description: Teacher create exercise
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: Exercise
+        format: model.Exercise
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Exercise'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with exercise
+  /teacher/courses/{id}/exercise/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Teacher delete exercise
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: exercise need delete
+        format: model.Exercise
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Exercise'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with exercise
+  /teacher/courses/{id}/exercise/update:
+    put:
+      consumes:
+      - application/json
+      description: Teacher update exercise of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: exercise need update
+        format: model.Exercise
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.Exercise'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with exercise
+  /teacher/courses/{id}/file:
+    get:
+      consumes:
+      - application/json
+      description: Teacher get all file of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with file
+  /teacher/courses/{id}/file/{file_id}:
+    get:
+      consumes:
+      - application/json
+      description: teacher get a file of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: file id
+        in: path
+        name: file_id
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with file
+  /teacher/courses/{id}/file/create:
+    post:
+      consumes:
+      - application/json
+      description: Teacher create file for course
+      parameters:
+      - description: Course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: File
+        format: model.File
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.File'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with file
+  /teacher/courses/{id}/file/delete:
+    delete:
+      consumes:
+      - application/json
+      description: Teacher delete file of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: File need delete
+        format: model.File
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.File'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with file
+  /teacher/courses/{id}/file/update:
+    put:
+      consumes:
+      - application/json
+      description: Teacher update file of course
+      parameters:
+      - description: course id
+        in: path
+        name: id
+        required: true
+        type: string
+      - description: File need update
+        format: model.File
+        in: body
+        name: req
+        schema:
+          $ref: '#/definitions/model.File'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - Teacher with file
+swagger: "2.0"

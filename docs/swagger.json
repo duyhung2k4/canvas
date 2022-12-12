@@ -1,0 +1,1570 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "Api canvas project",
+        "title": "Canvas Project",
+        "contact": {},
+        "version": "2.0"
+    },
+    "host": "localhost:3000",
+    "basePath": "/",
+    "paths": {
+        "/admin/course/create": {
+            "post": {
+                "description": "Admin create course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with course"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Course",
+                        "description": "Course",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Course"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/course/delete": {
+            "delete": {
+                "description": "Admin delete course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with course"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Course",
+                        "description": "Course need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Course"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/course/list": {
+            "get": {
+                "description": "Admin get list course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with course"
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/course/list/{id}": {
+            "get": {
+                "description": "Admin get course by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with course"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/course/update": {
+            "put": {
+                "description": "Admin update course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with course"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Course",
+                        "description": "Course need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Course"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/student/accounts": {
+            "get": {
+                "description": "Admin get all account student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account student"
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/student/accounts/{id}": {
+            "get": {
+                "description": "Admin get account student by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account student"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Student id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/student/create": {
+            "post": {
+                "description": "Admin create account student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account student"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Student",
+                        "description": "Account student",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Student"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/student/delete": {
+            "delete": {
+                "description": "Admin delete account student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account student"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Student",
+                        "description": "Account stundent need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Student"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/student/update": {
+            "put": {
+                "description": "Admin update account student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account student"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Student",
+                        "description": "Account student need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Student"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/subject/create": {
+            "post": {
+                "description": "Admin create subject",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with subject"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Subject",
+                        "description": "Subject",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Subject"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/subject/delete": {
+            "delete": {
+                "description": "Admin delete subject",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with subject"
+                ],
+                "parameters": [
+                    {
+                        "format": "mode.Subject",
+                        "description": "Subject need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Subject"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/subject/list": {
+            "get": {
+                "description": "Admin get all subject",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with subject"
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/subject/list/{id}": {
+            "get": {
+                "description": "Admin get subject by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with subject"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Subject id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/subject/update": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with subject"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Subject",
+                        "description": "Subject need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Subject"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/teacher/accounts": {
+            "get": {
+                "description": "Admin get all account teacher",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account teacher"
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/teacher/accounts/{id}": {
+            "get": {
+                "description": "Admin get account teacher by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account teacher"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Teacher Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/teacher/create": {
+            "post": {
+                "description": "Admin create account teacher",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account teacher"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Teacher",
+                        "description": "Account teacher",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Teacher"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/teacher/delete": {
+            "delete": {
+                "description": "Admin delete account teacher",
+                "consumes": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account teacher"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Teacher",
+                        "description": "Account teacher need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Teacher"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/admin/teacher/update": {
+            "put": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Admin with account teacher"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Teacher",
+                        "description": "Account teacher need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Teacher"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/login/admin": {
+            "post": {
+                "description": "Admin login",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Login"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Admin",
+                        "description": "Account admin",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Admin"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/login/student": {
+            "post": {
+                "description": "Login student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Login"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Student",
+                        "description": "Account student",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Student"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/login/teacher": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Login"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.Teacher",
+                        "description": "Account Teaccher",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Teacher"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/joincourse": {
+            "post": {
+                "description": "Student join course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with course"
+                ],
+                "parameters": [
+                    {
+                        "format": "model.CourseOfStudent",
+                        "description": "Course of student",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.CourseOfStudent"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course": {
+            "get": {
+                "description": "Student get all course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with course"
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}": {
+            "get": {
+                "description": "Student get course of student by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with course"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course of student id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}/exercise": {
+            "get": {
+                "description": "Student get exercise of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course Of Student id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}/exercise/{exercise_id}": {
+            "get": {
+                "description": "Student get exercise of course by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Exercise Id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}/exercise/{exercise_id}/assignment": {
+            "get": {
+                "description": "Student get assignment of exercise",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Exercise id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}/exercise/{exercise_id}/assignment_create": {
+            "post": {
+                "description": "Student create assignment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Exercise id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/student/my_course/{id}/exercise/{exercise_id}/assignment_update": {
+            "put": {
+                "description": "Student update assignment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Student with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Exercise Id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.Assignment",
+                        "description": "Assignment need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Assignment"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses": {
+            "get": {
+                "description": "Course of teacher",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with course"
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}": {
+            "get": {
+                "description": "Course of teacher by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with course"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/attendance/{attendance_id}": {
+            "put": {
+                "description": "Teacher update attendance status student",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with attendance status"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Attendance status id",
+                        "name": "attendance_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/chapter": {
+            "get": {
+                "description": "Teacher get all chapter of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with chapter"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course Id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/chapter/create": {
+            "post": {
+                "description": "Teacher create chapter for course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with chapter"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.Chapter",
+                        "description": "Chapter",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Chapter"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/chapter/delete": {
+            "delete": {
+                "description": "Teacher delete chapter",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with chapter"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/chapter/update": {
+            "put": {
+                "description": "Teacher update chapter",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with chapter"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chapter id",
+                        "name": "chapter_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/chapter/{chapter_id}": {
+            "get": {
+                "description": "Teacher get chapter id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with chapter"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Chapter id",
+                        "name": "chapter_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise": {
+            "get": {
+                "description": "Teacher get exercises of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/create": {
+            "post": {
+                "description": "Teacher create exercise",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.Exercise",
+                        "description": "Exercise",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Exercise"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/delete": {
+            "delete": {
+                "description": "Teacher delete exercise",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.Exercise",
+                        "description": "exercise need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Exercise"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/update": {
+            "put": {
+                "description": "Teacher update exercise of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.Exercise",
+                        "description": "exercise need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.Exercise"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/{exercise_id}": {
+            "get": {
+                "description": "Teacher get exercise by id",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with exercise"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "execie id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/{exercise_id}/assignment": {
+            "get": {
+                "description": "Teacher get assignment of exercise",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "exercise id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/{exercise_id}/assignment/update": {
+            "put": {
+                "description": "Teacher update assignment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Exercise id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/exercise/{exercise_id}/assignment/{assignment_id}": {
+            "get": {
+                "description": "Teacher get assignment",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with assignment"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Exercise id",
+                        "name": "exercise_id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "Assignment id",
+                        "name": "assignment_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/file": {
+            "get": {
+                "description": "Teacher get all file of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with file"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/file/create": {
+            "post": {
+                "description": "Teacher create file for course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with file"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "Course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.File",
+                        "description": "File",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.File"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/file/delete": {
+            "delete": {
+                "description": "Teacher delete file of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with file"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.File",
+                        "description": "File need delete",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.File"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/file/update": {
+            "put": {
+                "description": "Teacher update file of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with file"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "format": "model.File",
+                        "description": "File need update",
+                        "name": "req",
+                        "in": "body",
+                        "schema": {
+                            "$ref": "#/definitions/model.File"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/teacher/courses/{id}/file/{file_id}": {
+            "get": {
+                "description": "teacher get a file of course",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "Teacher with file"
+                ],
+                "parameters": [
+                    {
+                        "type": "string",
+                        "description": "course id",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "string",
+                        "description": "file id",
+                        "name": "file_id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "model.Admin": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Assignment": {
+            "type": "object",
+            "properties": {
+                "exercise": {
+                    "$ref": "#/definitions/model.Exercise"
+                },
+                "exerciseId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "student": {
+                    "$ref": "#/definitions/model.Student"
+                },
+                "studentId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.Chapter": {
+            "type": "object",
+            "properties": {
+                "course": {
+                    "$ref": "#/definitions/model.Course"
+                },
+                "courseId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Course": {
+            "type": "object",
+            "properties": {
+                "codeCourse": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "lessons": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "subject": {
+                    "$ref": "#/definitions/model.Subject"
+                },
+                "subjectId": {
+                    "type": "integer"
+                },
+                "teacher": {
+                    "$ref": "#/definitions/model.Teacher"
+                },
+                "teacherId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.CourseOfStudent": {
+            "type": "object",
+            "properties": {
+                "course": {
+                    "$ref": "#/definitions/model.Course"
+                },
+                "courseId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "student": {
+                    "$ref": "#/definitions/model.Student"
+                },
+                "studentId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "model.Exercise": {
+            "type": "object",
+            "properties": {
+                "course": {
+                    "$ref": "#/definitions/model.Course"
+                },
+                "courseId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.File": {
+            "type": "object",
+            "properties": {
+                "course": {
+                    "$ref": "#/definitions/model.Course"
+                },
+                "courseId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "link": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Student": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Subject": {
+            "type": "object",
+            "properties": {
+                "codeSubject": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
+        "model.Teacher": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "pass": {
+                    "type": "string"
+                }
+            }
+        }
+    }
+}
